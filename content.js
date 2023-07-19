@@ -1,20 +1,17 @@
 setTimeout(function () {
-  var anchorElement = document
-    .getElementById("__tosspayments_connectpay_iframe__")
-    .contentWindow.document.querySelector(
-      "#connectpay-portal-container > div > div > a:nth-child(1)"
-    );
+  var iframeElement = document.getElementById(
+    "__tosspayments_connectpay_iframe__"
+  );
 
-  if (anchorElement) {
+  if (iframeElement) {
     // 메시지 전송
     var message = {
       type: "clickEvent",
-      targetElement:
-        "#connectpay-portal-container > div > div > a:nth-child(1)",
+      selector: "#connectpay-portal-container>div>div>a:nth-child(1)",
     };
-    window.postMessage(message, "*");
+    iframeElement.contentWindow.postMessage(message, "*");
+    console.log("전송");
   }
-
   // var anchorElement = document
   //   .getElementById("__tosspayments_connectpay_iframe__")
   //   .contentWindow.document.querySelector(
@@ -32,6 +29,4 @@ setTimeout(function () {
   //   });
   //   anchorElement.dispatchEvent(mouseUpEvent); // mouseup 이벤트 발생
   // }
-}, 7000);
-
-setTimeout(function () {}, 3000);
+}, 6000);

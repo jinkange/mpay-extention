@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Extension</title>
-    <script src="./popup.js"></script>
+    <title>Musinsa Number Storage</title>
+    <link rel="stylesheet" href="popup.css" />
+    <script src="popup.js"></script>
   </head>
   <body>
-    <input type="text" id="inputData" />
-    <button id="saveButton">Save</button>
+    <div class="container">
+      <h2>Enter a 6-digit number:</h2>
+      <input
+        type="text"
+        id="numberInput"
+        maxlength="6"
+        pattern="[0-9]{6}"
+        required
+      />
+      <button id="saveButton">Save</button>
+      <p id="message"></p>
+    </div>
   </body>
 </html>

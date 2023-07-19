@@ -6,7 +6,7 @@
   "icons": {
     "16": "icon16.png"
   },
-  "permissions": ["tabs", "storage", "https://pay.musinsa.com/certify/req"],
+  "permissions": ["storage", "activeTab", "tabs"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
@@ -16,8 +16,12 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://pay.musinsa.com/certify/req"],
+      "matches": [
+        "https://pay.musinsa.com/certify/req",
+        "https://www.musinsa.com/*"
+      ],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "web_accessible_resources": ["popup.html", "popup.css", "popup.js"]
 }

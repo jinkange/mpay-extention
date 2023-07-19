@@ -1,0 +1,25 @@
+body {
+  width: 200px;
+  height: 180px;
+  margin: 0;
+  padding: 10px;
+}
+
+.container {
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+}
+
+p {
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}

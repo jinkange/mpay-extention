@@ -29,7 +29,8 @@ chrome.windows.onCreated.addListener(function (window) {
   }, 1000);
 });
 
-chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+chrome.windows.onCreated.addListener(function (message, sender, sendResponse) {
+  console.log("message");
   if (message.type === "clickEvent") {
     // 원하는 동작 수행
     var anchorElement = document.querySelector(message.targetElement);
