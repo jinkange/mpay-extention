@@ -6,7 +6,13 @@
   "icons": {
     "16": "icon16.png"
   },
-  "permissions": ["storage", "activeTab", "tabs"],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "https://pay.musinsa.com/",
+    "https://pay.musinsa.com/certify/req"
+  ],
   "background": {
     "scripts": ["background.js"],
     "persistent": false

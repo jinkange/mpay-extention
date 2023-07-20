@@ -11,9 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
       message.textContent = "Please enter a valid 6-digit number.";
       return;
     }
-
     // Save the number to storage
-    chrome.storage.sync.set({ storedNumber: numberValue }, function () {
+    chrome.storage.sync.set({ key: numberValue }, function () {
       console.log("Number saved successfully:", numberValue);
       message.textContent = "Number saved successfully!";
       setTimeout(function () {
@@ -23,8 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
     chrome.storage.sync.get("key", function (data) {
       const storedValue = data.key;
       console.log("Stored Number:", storedValue);
-      alert(storedValue);
-
       // Display the loaded number in the input field
       numberInput.value = storedValue || "";
     });
